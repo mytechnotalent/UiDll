@@ -1,8 +1,8 @@
 ;==============================================================================
 ; File:     UiDll.asm
 ;
-; Purpose:  64-bit Windows DLL exporting UIMessageBox, a thin wrapper around
-;           the Win32 MessageBoxA API with MB_OK style.
+; Purpose:  UiDll is a 64-bit Windows DLL exporting Windows API UI 
+;           functionality in Assembler.
 ;
 ; Platform: Windows x64
 ; Author:   Kevin Thomas
