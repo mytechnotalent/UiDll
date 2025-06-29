@@ -2,7 +2,7 @@
 ; File:     UiDll.asm
 ;
 ; Purpose:  UiDll is a 64-bit Windows DLL exporting Windows API UI 
-;           functionality in Assembler.
+;           functionality written in Assembler.
 ;
 ; Platform: Windows x64
 ; Author:   Kevin Thomas
@@ -10,7 +10,7 @@
 ; Updated:  2025-06-28
 ;==============================================================================
 
-extrn  MessageBoxA :proc
+extrn  MessageBoxA :PROC
 
 public UIMessageBox
 public DllMain
@@ -34,14 +34,14 @@ public DllMain
 ; Return:
 ;   IDOK = 1 - The OK button was selected.
 ;------------------------------------------------------------------------------
-UIMessageBox proc lpText:QWORD, lpCaption:QWORD
-  XOR    R9, R9              ; 4th param = uType
-  MOV    R8, RDX             ; 3rd param = lpCaption
-  MOV    RDX, RCX            ; 2nd param = lpText
-  XOR    RCX, RCX            ; 1st param = hWnd
-  CALL   MessageBoxA         ; call Win32 API
-  RET                        ; return to caller
-UIMessageBox endp
+UIMessageBox PROC lpText:QWORD, lpCaption:QWORD
+  XOR    R9, R9                   ; 4th param = uType
+  MOV    R8, RDX                  ; 3rd param = lpCaption
+  MOV    RDX, RCX                 ; 2nd param = lpText
+  XOR    RCX, RCX                 ; 1st param = hWnd
+  CALL   MessageBoxA              ; call Win32 API
+  RET                             ; return to caller
+UIMessageBox ENDP
 
 ;------------------------------------------------------------------------------
 ; DllMain PROC
@@ -61,9 +61,9 @@ UIMessageBox endp
 ;   TRUE = Success initialization.
 ;   FALSE = Failure initialization.
 ;------------------------------------------------------------------------------
-DllMain proc hinstDLL:QWORD, fdwReason:DWORD, lpReserved:QWORD
-  MOV    EAX, 1              ; TRUE
-  RET                        ; return to caller
-DllMain endp
+DllMain PROC hinstDLL:QWORD, fdwReason:DWORD, lpReserved:QWORD
+  MOV    EAX, 1                   ; TRUE
+  RET                             ; return to caller
+DllMain ENDP
 
-end
+END                               ; end of UiDll.asm
