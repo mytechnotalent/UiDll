@@ -9,7 +9,7 @@ UiDll is a 64-bit Windows DLL exporting Windows API UI functionality written in 
 
 <br>
 
-## Code
+# Code
 ```
 ;==============================================================================
 ; File:     UiDll.asm
@@ -84,12 +84,12 @@ END                               ; end of UiDll.asm
 
 <br>
 
-## Comprehensive Deep Dive Supplemental Material
-### Windows Internals Crash Course by Duncan Ogilvie
-#### [SLIDES](https://mrexodia.github.io/files/wicc-2023-slides.pdf)
-#### [VIDEO](https://youtu.be/I_nJltUokE0?si=Q1yOfZuIF5jOa_2U)
+# Comprehensive Deep Dive Supplemental Material
+## Windows Internals Crash Course by Duncan Ogilvie
+### [SLIDES](https://mrexodia.github.io/files/wicc-2023-slides.pdf)
+### [VIDEO](https://youtu.be/I_nJltUokE0?si=Q1yOfZuIF5jOa_2U)
 
 <br>
 
-## License
+# License
 [MIT](https://github.com/mytechnotalent/UiDll/blob/master/LICENSE.txt)
